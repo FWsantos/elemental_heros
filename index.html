@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>YU-GI-OH!!!</title>
+  <title>Memória!!!</title>
 
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <script src="bootstrap/jquery.min.js"></script>
@@ -13,50 +13,32 @@
   <script src="bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./bootstrap/custom.css">
   <link rel="stylesheet" type="text/css" href="./bootstrap/custom.css">
+  
+  <!-- script and style customizados -->
   <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- -->
 </head>
-<body class="bg-primary">
-  <div class="jumbotron text-center bg-info text-white md-0 pd-0" style="margin-bottom:-1px">
+<body>
+  <!-- <div class="jumbotron text-center bg-dark text-white md-0 pd-0" style="margin-bottom:-1px">
     <h1>Célula de Desenvolvimento Web</h1>
-    <p>Um oferecimento PASSE produções</p> 
-  </div>
-
-
-  <nav class="navbar navbar-expand-sm bg-warning navbar-light">
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Atividades</a>
-        </li>
-
-      </ul>
-    </div>  
-  </nav>
+  --></div>
 
   <div class="container mt-5">
 
     <div class="row">
-      
-      <div class="col-md-4 mx-auto">
-        <h2 class="text-center text-white">Logue-se</h2>
-
-        <div class="form-group jumbotron">
-
-          <!-- <label for="nome">Nome: </label> -->
-          <input id="nome" class="form-control mb-3" type="text" name="nome" placeholder="Digite o nome" onchange="checar()">
-          <!-- <label for="senha">Senha: </label> -->
-          <input id="senha" class="form-control mb-3" type="password" name="senha" placeholder="Digite a senha" disabled>
-          <button onclick="checar()" class="btn btn-primary form-control">Logar</button>
-
-        </div>
-
-      </div>    
+      <button class="bloco btn-lg"> </button>
+      <button class="bloco btn-lg"> </button>
+      <button class="bloco btn-lg"> </button>
+      <button class="bloco btn-lg"> </button>
+      <button class="bloco btn-lg"> </button>
+      <button class="bloco btn-lg"> </button>
+    </div>
+    <div class="row mt-5">
+      <button class="btn-lg mx-auto btn-dark" onclick="play()" id="play">INICIAR</button>
     </div>
   </div>    
+  <p id="demo"></p>
 
 </body>
 </html>

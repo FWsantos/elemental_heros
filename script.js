@@ -7,6 +7,18 @@ var disablePlay = function () {
 	btnPlay.setAttribute('disabled', '');	
 }
 
+var disableBlocos = function () {
+	for (var i = 0; i < 6; i++) {
+		document.getElementById('b'+i).setAttribute('disabled', '');
+	}
+}
+
+var enableBlocos = function () {
+	for (var i = 0; i < 6; i++) {
+		document.getElementById('b'+i).removeAttribute('disabled');
+	}
+}
+
 var enablePlay = function () {
 	var btnPlay = document.getElementById("play");
 	btnPlay.removeAttribute('disabled');	
@@ -17,7 +29,7 @@ var colorir = function (id) {
 	obj.classList.toggle(cores[id]);
 	setTimeout(function () {
 		obj.classList.toggle(cores[id]);
-	}, 200);
+	}, 500);
 	// document.getElementById('resultado').innerHTML = id+1;
 
 }
@@ -34,6 +46,7 @@ var venceu = function (turnoD, a) {
 
 
 var payplay = function (a, turnoD) {
+	enableBlocos();
 	// console.log(permite);
 	// window.permite = true;
 	// console.log(permite);
@@ -132,7 +145,7 @@ var payplay = function (a, turnoD) {
 			document.getElementById('resultado').innerHTML = "Perdeu";
 			setTimeout(function () {
 				document.location.reload(true);
-			}, 2000)
+			}, 1500);
 		}
 		
 	};
@@ -141,6 +154,7 @@ var payplay = function (a, turnoD) {
 
 var play = function (turnoD, a) {
 	disablePlay();
+	disableBlocos();
 
 	
 	// var turnoD = 3;
@@ -154,15 +168,16 @@ var play = function (turnoD, a) {
 	for (var i = 0; i < turnoD+1; i++) {
 		(function (i) {
 			setTimeout(function () {
-				if(i != 0){
-					blocos[a[i-1]].classList.remove(cores[a[i-1]]);
+				// if(i != 0){
+				// 	blocos[a[i-1]].classList.remove(cores[a[i-1]]);
 
-				}
+				// }
 				if (i < turnoD) {	
-					setTimeout(function(){
-						console.log(a[i]);
-						blocos[a[i]].classList.add(cores[a[i]]);
-					}, 100*i);
+					colorir(a[i]);
+					// setTimeout(function(){
+					// 	console.log(a[i]);
+					// 	blocos[a[i]].classList.add(cores[a[i]]);
+					// }, 100*i);
 					document.getElementById('resultado').innerHTML = a[i] + 1;
 				}else if(i == turnoD){
 					document.getElementById('resultado').innerHTML = "Teste sua memória";
@@ -170,7 +185,7 @@ var play = function (turnoD, a) {
 					payplay(a, turnoD);
 				}
 
-			}, 500*i);
+			}, 1000*i);
 		})(i);
 	}
 }
